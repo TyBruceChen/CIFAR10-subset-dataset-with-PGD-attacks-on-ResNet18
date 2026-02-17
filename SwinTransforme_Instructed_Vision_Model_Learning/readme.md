@@ -2,3 +2,7 @@ Based on the research [Unlabeled Data Improves Adversarial Robustness](https://a
 
 ![fig1](Figs/Vision_Model_Robustness.png)
 
+(Pending:)
+
+* Check the CNN/ViT robustness improvement by using semi-supervised training on Swin Transformer
+* Implement this on small language models vision encoders to check the transferability.
