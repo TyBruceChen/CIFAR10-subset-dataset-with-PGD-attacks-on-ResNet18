@@ -14,6 +14,7 @@ ds['train'][0]
 ```
 <details>
     <summary>How to load for training</summary>
+Caution: the train_test_split() method has a randomness parameter default setting if use.
     
     from datasets import load_dataset, Dataset
     from torch.utils.data import DataLoader
