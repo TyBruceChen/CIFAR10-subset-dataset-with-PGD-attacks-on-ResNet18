@@ -95,8 +95,26 @@ train_transform = T.Compose([
 
 <details>
     <summary>Load Model</summary>
+
+    class NormalizedModel(nn.Module):
+    def __init__(self, base_model, mean, std):
+        super().__init__()
+        self.base_model = base_model
+        self.register_buffer("mean", torch.tensor(mean).view(1, 3, 1, 1))
+        self.register_buffer("std", torch.tensor(std).view(1, 3, 1, 1))
+
+    def forward(self, x):
+        x = (x - self.mean) / self.std
+        return self.base_model(x)
+
+    base_model = models.resnet18(weights=None)  # no pretrained weights needed
+    base_model.fc = nn.Linear(base_model.fc.in_features, 10)
     
-    model = torchvision.models.resnet18()
-    model.load_state_dict(torch.load("best_model.pth"))
+    model = NormalizedModel(
+        base_model,
+        mean=[0.485, 0.456, 0.406],
+        std=[0.229, 0.224, 0.225],
+    )
+    model.load_state_dict(torch.load("resnet18_fft_augmentation.pth"))
     model.eval()
 </details>
