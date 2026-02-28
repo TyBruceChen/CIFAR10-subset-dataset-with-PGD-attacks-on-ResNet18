@@ -14,7 +14,6 @@ ds['train'][0]
 ```
 <details>
     <summary>How to load for training</summary>
-```
     
     from datasets import load_dataset, Dataset
     from torch.utils.data import DataLoader
@@ -63,5 +62,5 @@ ds['train'][0]
         print(f"Batch shape: {images.shape} with type {type(images)}, Labels: {type(labels[:5])}")
         break
         
-```
+
 </details>
