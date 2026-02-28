@@ -63,5 +63,40 @@ Caution: the train_test_split() method has a randomness parameter default settin
         print(f"Batch shape: {images.shape} with type {type(images)}, Labels: {type(labels[:5])}")
         break
         
+</details>
 
+### Fine-tuned ResNet18 trained on CIFAR10-800:
+<[Full fine-tuned](https://drive.google.com/file/d/1epcOcBc6n_TNAXCUA9kipf24IUXeeoXs/view?usp=sharing), 0.90875 val acc> <[Full fine-tuned w/ augmentation](https://drive.google.com/file/d/1SeHPmC2KzBrDx4X3PU9QVv6FEe8ARhKK/view?usp=sharing), 0.925 val acc>
+<details>
+<summary>Configuration</summary>
+Pr-trained model from 
+
+    torchvision.models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
+Preprocessing methods:
+* torchvision.transforms.ToTensor()
+* Normalization: mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]
+* If w/ augmentation:
+```
+train_transform = T.Compose([
+    T.RandomHorizontalFlip(),
+    T.RandomRotation(10),
+    T.ColorJitter(brightness=0.2, contrast=0.2),
+    T.ToTensor(),  # [0, 1] range
+])
+```
+</details>
+
+<details>
+    <summary>Training Process Validation Accuracy</summary>
+    <img width="3410" height="1760" alt="W B Chart 28_02_2026, 02_55_04" src="https://github.com/user-attachments/assets/fd52e0f7-c3ad-453c-9038-096e8cc232c2" />
+    <img width="3410" height="1760" alt="W B Chart 28_02_2026, 02_53_54" src="https://github.com/user-attachments/assets/ce623cd0-6765-473d-8a9c-bbfa226839e2" />
+
+</details>
+
+<details>
+    <summary>Load Model</summary>
+    
+    model = torchvision.models.resnet18()
+    model.load_state_dict(torch.load("best_model.pth"))
+    model.eval()
 </details>
