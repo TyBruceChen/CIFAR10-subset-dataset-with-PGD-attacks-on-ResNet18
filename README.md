@@ -66,7 +66,7 @@ Caution: the train_test_split() method has a randomness parameter default settin
 </details>
 
 ### Fine-tuned ResNet18 trained on CIFAR10-800:
-<[Full fine-tuned](https://drive.google.com/file/d/1epcOcBc6n_TNAXCUA9kipf24IUXeeoXs/view?usp=sharing), 0.90875 val acc> <[Full fine-tuned w/ augmentation](https://drive.google.com/file/d/1SeHPmC2KzBrDx4X3PU9QVv6FEe8ARhKK/view?usp=sharing), 0.925 val acc>
+<[Full fine-tuned](https://drive.google.com/file/d/1epcOcBc6n_TNAXCUA9kipf24IUXeeoXs/view?usp=sharing), 0.90875 val acc> <[Full fine-tuned w/ augmentation](https://drive.google.com/file/d/1SeHPmC2KzBrDx4X3PU9QVv6FEe8ARhKK/view?usp=sharing), 0.925 val acc, **Currently Used for Adversarial Dataset Generation**>
 <details>
 <summary>Configuration</summary>
 Pr-trained model from 
