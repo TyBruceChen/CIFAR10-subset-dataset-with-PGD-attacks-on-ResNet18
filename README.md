@@ -154,6 +154,80 @@ Features:
 </details>
 
 <details>
+    <summary>Generation Result</summary>
+
+    ============================================================
+    Overall Accuracy (N=1600)
+    ============================================================
+                   Clean: 92.50% (1480/1600)
+                Linf PGD: 0.00% (0/1600)
+                  L2 PGD: 0.00% (0/1600)
+    ============================================================
+    
+    ============================================================
+    Per-Class Accuracy
+    ============================================================
+    Class                Clean   Linf PGD     L2 PGD
+    ---------------------------------------------
+    airplane            95.62%      0.00%      0.00%
+    automobile          97.50%      0.00%      0.00%
+    bird                93.12%      0.00%      0.00%
+    cat                 81.25%      0.00%      0.00%
+    deer                90.00%      0.00%      0.00%
+    dog                 87.50%      0.00%      0.00%
+    frog                93.75%      0.00%      0.00%
+    horse               91.88%      0.00%      0.00%
+    ship                95.62%      0.00%      0.00%
+    truck               98.75%      0.00%      0.00%
+    
+    ============================================================
+    Linf PGD: Misclassification Distribution
+    ============================================================
+    True Class      → Predicted As       Count
+    ---------------------------------------------
+    automobile      → truck                 75
+    horse           → deer                  69
+    dog             → cat                   67
+    truck           → automobile            58
+    frog            → cat                   53
+    airplane        → ship                  52
+    bird            → frog                  47
+    cat             → dog                   46
+    ship            → airplane              44
+    truck           → ship                  43
+    deer            → horse                 42
+    airplane        → bird                  42
+    frog            → bird                  41
+    cat             → frog                  41
+    automobile      → ship                  40
+    
+    ============================================================
+    L2 PGD: Misclassification Distribution
+    ============================================================
+    True Class      → Predicted As       Count
+    ---------------------------------------------
+    automobile      → truck                 80
+    dog             → cat                   79
+    truck           → automobile            62
+    ship            → airplane              60
+    horse           → deer                  56
+    cat             → dog                   55
+    airplane        → bird                  53
+    frog            → cat                   53
+    deer            → horse                 47
+    horse           → dog                   44
+    frog            → bird                  41
+    deer            → bird                  41
+    airplane        → ship                  39
+    bird            → frog                  36
+    automobile      → ship                  35
+    
+    ============================================================
+    Verification: Stored Labels vs Fresh Predictions
+    ============================================================
+</details>
+
+<details>
     <summary>Dataset Load</summary>
 
     from torch.utils.data import DataLoader
