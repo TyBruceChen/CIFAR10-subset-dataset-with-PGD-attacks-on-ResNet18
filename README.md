@@ -132,8 +132,11 @@ train_transform = T.Compose([
 
     from torch.utils.data import DataLoader
     from datasets import load_dataset
+    import torchvision.transforms as T
+    import torch
     
-    adv_ds = load_dataset("parquet", data_files="/content/cifar10_adversarial_224_f32.parquet")['train']
+    adv_ds = load_dataset("parquet", data_files="cifar10_adversarial_224_f32.parquet")['train']
+    device = 'cpu' if torch.cuda.is_available() == False else 'cuda'
     
     def preprocess(batch):
         to_tensor = T.ToTensor()
@@ -146,7 +149,7 @@ train_transform = T.Compose([
         return batch
     
     adv_ds.set_transform(preprocess)
-    loader = DataLoader(test, batch_size=512, shuffle=False)
+    loader = DataLoader(adv_ds, batch_size=8, shuffle=False)
     
     for batch in loader:
         orig = batch["orig_pixels"].to(device)
@@ -154,4 +157,5 @@ train_transform = T.Compose([
         l2 = batch["l2_pixels"].to(device)
         labels = batch["true_label"].to(device)
         B = labels.size(0)
+        break
 </details>
