@@ -123,3 +123,8 @@ train_transform = T.Compose([
 * features: original image (saved in PIL image format) with corresponding $L_2$ and $L_{\infty}$ PGD perturbed images (saved in float32 to keep precision, shape in (3,224,224)), also with labels from these three images.
 * Columns are ['original', 'linf_pgd', 'l2_pgd', 'true_label', 'linf_pgd_pred_label', 'l2_pgd_pred_label']
 * Numer of rows: 8000 (800 each class)
+* Visualization:
+
+    <img width="525" height="180" alt="LoadAAdataset" src="https://github.com/user-attachments/assets/da4aad96-ca25-4593-9af6-8b86818539bf" />
+
+
