@@ -127,4 +127,32 @@ train_transform = T.Compose([
 
     <img width="525" height="180" alt="LoadAAdataset" src="https://github.com/user-attachments/assets/da4aad96-ca25-4593-9af6-8b86818539bf" />
 
+<details>
+    <summary>Dataset Load</summary>
 
+    from torch.utils.data import DataLoader
+    from datasets import load_dataset
+    
+    adv_ds = load_dataset("parquet", data_files="/content/cifar10_adversarial_224_f32.parquet")['train']
+    adv_ds = load_dataset("parquet", data_files="/content/cifar10_adversarial_224_f32.parquet")['train']
+
+    def preprocess(batch):
+        to_tensor = T.ToTensor()
+        batch["orig_pixels"] = [to_tensor(img.convert("RGB")) for img in batch["original"]]
+        batch["linf_pixels"] = [torch.tensor(arr) for arr in batch["linf_pgd"]]
+        batch["l2_pixels"] = [torch.tensor(arr) for arr in batch["l2_pgd"]]
+        del batch["original"]
+        del batch["linf_pgd"]
+        del batch["l2_pgd"]
+        return batch
+    
+    adv_ds.set_transform(preprocess)
+    loader = DataLoader(test, batch_size=512, shuffle=False)
+    
+    for batch in loader:
+        orig = batch["orig_pixels"].to(device)
+        linf = batch["linf_pixels"].to(device)
+        l2 = batch["l2_pixels"].to(device)
+        labels = batch["true_label"].to(device)
+        B = labels.size(0)
+</details>
