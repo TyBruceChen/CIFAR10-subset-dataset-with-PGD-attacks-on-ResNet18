@@ -120,12 +120,38 @@ train_transform = T.Compose([
 </details>
 
 ### CIFAR10-800 Adversarial Attack Dataset: [link](https://drive.google.com/file/d/1I7t8VGqKLKOvh-Kk8DoRtBI8eX3HI6Ps/view?usp=sharing)
-* features: original image (saved in PIL image format) with corresponding $L_2$ and $L_{\infty}$ PGD perturbed images (saved in float32 to keep precision, shape in (3,224,224)), also with labels from these three images.
+
+Features:
+* original image (saved in PIL image format) with corresponding $L_2$ and $L_{\infty}$ PGD perturbed images (saved in float32 to keep precision, shape in (3,224,224)), also with labels from these three images.
 * Columns are ['original', 'linf_pgd', 'l2_pgd', 'true_label', 'linf_pgd_pred_label', 'l2_pgd_pred_label']
 * Numer of rows: 8000 (800 each class)
 * Visualization:
 
     <img width="525" height="180" alt="LoadAAdataset" src="https://github.com/user-attachments/assets/da4aad96-ca25-4593-9af6-8b86818539bf" />
+
+<details>
+    <summary>Dataset Configuration Details</summary>
+    Based on foolbox library:
+
+    import foolbox as fb
+    epsilon_linf = 8.0/255
+    epsilon_l2 = 2.0  # L2 budget (commonly 0.5~3.0)
+    rel_stepsize = 0.2
+    steps = 10
+    
+    linf_attack = fb.attacks.LinfProjectedGradientDescentAttack(
+        rel_stepsize=rel_stepsize,
+        steps=steps,
+        random_start=True,
+    )
+    
+    l2_attack = fb.attacks.L2ProjectedGradientDescentAttack(
+        rel_stepsize=rel_stepsize,
+        steps=steps,
+        random_start=True,
+    )
+    
+</details>
 
 <details>
     <summary>Dataset Load</summary>
