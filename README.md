@@ -134,8 +134,7 @@ train_transform = T.Compose([
     from datasets import load_dataset
     
     adv_ds = load_dataset("parquet", data_files="/content/cifar10_adversarial_224_f32.parquet")['train']
-    adv_ds = load_dataset("parquet", data_files="/content/cifar10_adversarial_224_f32.parquet")['train']
-
+    
     def preprocess(batch):
         to_tensor = T.ToTensor()
         batch["orig_pixels"] = [to_tensor(img.convert("RGB")) for img in batch["original"]]
