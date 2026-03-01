@@ -118,3 +118,8 @@ train_transform = T.Compose([
     model.load_state_dict(torch.load("resnet18_fft_augmentation.pth"))
     model.eval()
 </details>
+
+### CIFAR10-800 Adversarial Attack Dataset: [Link](https://drive.google.com/file/d/1I7t8VGqKLKOvh-Kk8DoRtBI8eX3HI6Ps/view?usp=sharing)
+* features: original image with corresponding $L_2$ and $L_{\infty}$ PGD perturbed images (saved in float32 to keep precision, shape in (3,224,224)).
+* Columns are ['original', 'linf_pgd', 'l2_pgd', 'true_label', 'linf_pgd_pred_label', 'l2_pgd_pred_label']
+* Numer of rows: 8000 (800 each class)
