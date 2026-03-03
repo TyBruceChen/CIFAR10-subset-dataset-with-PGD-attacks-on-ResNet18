@@ -305,6 +305,14 @@ w/ augmentation, but with a different random seed (shuffle differently):
 ### Cross-model distilation:
 <details>
     <summary>ResNet18 Teacher Finetuned to CIFAR10</summary>
+
+    ============================================================
+    Overall Accuracy (N=1600)
+    ============================================================
+                   Clean: 15.81% (253/1600)
+                Linf PGD: 11.00% (176/1600)
+                  L2 PGD: 13.56% (217/1600)
+    ============================================================
 </details>
 
 <details>
