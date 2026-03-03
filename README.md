@@ -265,7 +265,6 @@ Features:
         break
 </details>
 
-
 ### Inter-model transferability:
 <details>
     <summary>On different fine-tuned ResNet18</summary>
@@ -302,6 +301,7 @@ w/ augmentation, but with a different random seed (shuffle differently):
                   L2 PGD: 89.81% (1437/1600)
     ============================================================
 </details>
+
 ### Cross-model distilation:
 <details>
     <summary>ResNet18 Teacher Finetuned to CIFAR10</summary>
