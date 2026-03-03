@@ -117,6 +117,11 @@ train_transform = T.Compose([
     )
     model.load_state_dict(torch.load("resnet18_fft_augmentation.pth"))
     model.eval()
+
+Or unwrapped:
+
+    model = torchvision.models.resnet18(weights=None)
+    model.load_state_dict(torch.load("resnet18.pth", map_location=torch.device('cpu')))
 </details>
 
 ### CIFAR10-800 Adversarial Attack Dataset: [link](https://drive.google.com/file/d/1I7t8VGqKLKOvh-Kk8DoRtBI8eX3HI6Ps/view?usp=sharing)
