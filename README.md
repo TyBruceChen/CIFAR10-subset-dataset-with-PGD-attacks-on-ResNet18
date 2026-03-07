@@ -338,7 +338,7 @@ randomly initialized for training:
 
 ### Cross-model distilation:
 <details>
-    <summary>ResNet18 Teacher Finetuned to CIFAR10</summary>
+    <summary>ResNet18 Teacher Finetuned to CIFAR10 (Not sure)</summary>
 
     ============================================================
     Overall Accuracy (N=1600)
@@ -349,6 +349,28 @@ randomly initialized for training:
     ============================================================
 </details>
 
+Downsampled at 32 bits, the perturbation could fail.
 <details>
-    <summary>ResNet18 Student Learning based on ResNet18 Teacher Labels</summary>
+    <summary>ResNet18 Student Learning based on CresNet Teacher Labels</summary>
+    
+    ============================================================
+    Overall Accuracy (N=1600)
+    ============================================================
+                   Clean: 95.62% (1530/1600)
+                Linf PGD: 96.06% (1537/1600)
+                  L2 PGD: 96.31% (1541/1600)
+    ============================================================
+</details>
+
+
+<details>
+    <summary>ResNet18 Student Learning based on SwinT Teacher Labels</summary>
+    
+    ============================================================
+    Overall Accuracy (N=1600)
+    ============================================================
+                   Clean: 96.12% (1538/1600)
+                Linf PGD: 96.12% (1538/1600)
+                  L2 PGD: 96.44% (1543/1600)
+    ============================================================
 </details>
