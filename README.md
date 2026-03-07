@@ -349,7 +349,7 @@ randomly initialized for training:
     ============================================================
 </details>
 
-Downsampled at 32 bits, the perturbation could fail.
+Downsampled at 32x32 pixels, the perturbation could fail.
 <details>
     <summary>ResNet18 Student Learning based on CresNet Teacher Labels</summary>
     
