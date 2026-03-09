@@ -8,7 +8,7 @@ Research did on UCSB ECE594BB class, Winter 2026 quarter
 * Work Directory: [Colab Bruce]([https://colab.research.google.com/drive/17b1X_DI12Zo_bNVs-fkRO4ZPdOg-wy-9?usp=sharing](https://colab.research.google.com/drive/17b1X_DI12Zo_bNVs-fkRO4ZPdOg-wy-9?usp=sharing)) [Colab Eli](https://colab.research.google.com/drive/17BSkgq4CwgkxlkK_jZGc9JLm0qwgpS3C?usp=sharing#scrollTo=4b40eda6)
 
 ### Milestones:
-* Trained finetuned ResNet18
+* Trained finetuned ResNet18 on the subset of CIFAR10 (800 samples for each category)
 * Apply L2PGD and LinfPGD adversarial attack by foolbox to the model and save the dataset (~9 GB)
 * Experiment on inter-model and cross model transferability
 
