@@ -337,18 +337,6 @@ randomly initialized for training:
 
 
 ### Cross-model distilation:
-<details>
-    <summary>ResNet18 Teacher Finetuned to CIFAR10 (Not sure)</summary>
-
-    ============================================================
-    Overall Accuracy (N=1600)
-    ============================================================
-                   Clean: 15.81% (253/1600)
-                Linf PGD: 11.00% (176/1600)
-                  L2 PGD: 13.56% (217/1600)
-    ============================================================
-</details>
-
 Downsampled at 32x32 pixels, the perturbation could fail.
 <details>
     <summary>ResNet18 Student Learning based on CresNet Teacher Labels</summary>
