@@ -3,7 +3,7 @@ Ideas for the UCSB ECE 594BB AI Robustness Course 2026 Winter
 
 * RobustBench: [link](https://robustbench.github.io/)
 * Image Net tiny: [link](https://drive.google.com/file/d/1AQGoMBlmXvFhJIKaDj4YbB-v241ppLXA/view)
-* Work Directory: [Colab Bruce](https://colab.research.google.com/drive/17b1X_DI12Zo_bNVs-fkRO4ZPdOg-wy-9?usp=sharing) [Colab Eli](https://colab.research.google.com/drive/17BSkgq4CwgkxlkK_jZGc9JLm0qwgpS3C?usp=sharing#scrollTo=4b40eda6)
+* Work Directory: [Colab Bruce]([https://colab.research.google.com/drive/17b1X_DI12Zo_bNVs-fkRO4ZPdOg-wy-9?usp=sharing](https://colab.research.google.com/drive/17b1X_DI12Zo_bNVs-fkRO4ZPdOg-wy-9?usp=sharing)) [Colab Eli](https://colab.research.google.com/drive/17BSkgq4CwgkxlkK_jZGc9JLm0qwgpS3C?usp=sharing#scrollTo=4b40eda6)
 
 ### CIFAR10 800-Subset [link](https://drive.google.com/file/d/1odeARw_-PWqMM2ysod9xwqnzdxencLEZ/view?usp=sharing) 16-sample [example](https://drive.google.com/file/d/1C2lIuZqy0Yk6cqLtXZXvO_u9H6fhuDHv/view?usp=sharing)
 How to load it:
