@@ -13,7 +13,7 @@ Research did on UCSB ECE594BB class, Winter 2026 quarter
 * Apply L2PGD and LinfPGD adversarial attack by foolbox to the model and save the dataset (~9 GB)
 * Experiment on inter-model and cross model transferability
 
-### CIFAR10 800-Subset [link](https://huggingface.co/datasets/TyBruce/CIFAR10-PGD-attack-ResNet18/blob/main/cifar10_balanced_224.parquet) 16-sample [example](https://drive.google.com/file/d/1C2lIuZqy0Yk6cqLtXZXvO_u9H6fhuDHv/view?usp=sharing) (without adversarial attack)
+### CIFAR10 800-Subset [link](https://huggingface.co/datasets/TyBruce/CIFAR10-PGD-attack-ResNet18/blob/main/cifar10_balanced_224.parquet) 16-sample [example](https://huggingface.co/datasets/TyBruce/CIFAR10-PGD-attack-ResNet18/blob/main/sample_16.parquet) (without adversarial attack)
 How to load it:
 ```
 from datasets import load_dataset
