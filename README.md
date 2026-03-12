@@ -13,7 +13,7 @@ Research did on UCSB ECE594BB class, Winter 2026 quarter
 * Apply L2PGD and LinfPGD adversarial attack by foolbox to the model and save the dataset (~9 GB)
 * Experiment on inter-model and cross model transferability
 
-### CIFAR10 800-Subset [link](https://drive.google.com/file/d/1odeARw_-PWqMM2ysod9xwqnzdxencLEZ/view?usp=sharing) 16-sample [example](https://drive.google.com/file/d/1C2lIuZqy0Yk6cqLtXZXvO_u9H6fhuDHv/view?usp=sharing) (without adversarial attack)
+### CIFAR10 800-Subset [link](https://huggingface.co/datasets/TyBruce/CIFAR10-PGD-attack-ResNet18/blob/main/cifar10_balanced_224.parquet) 16-sample [example](https://drive.google.com/file/d/1C2lIuZqy0Yk6cqLtXZXvO_u9H6fhuDHv/view?usp=sharing) (without adversarial attack)
 How to load it:
 ```
 from datasets import load_dataset
@@ -74,7 +74,7 @@ Caution: the train_test_split() method has a randomness parameter default settin
 </details>
 
 ### Fine-tuned ResNet18 trained on CIFAR10-800:
-<[Full fine-tuned](https://drive.google.com/file/d/1epcOcBc6n_TNAXCUA9kipf24IUXeeoXs/view?usp=sharing), 0.90875 val acc> <[Full fine-tuned w/ augmentation](https://drive.google.com/file/d/1SeHPmC2KzBrDx4X3PU9QVv6FEe8ARhKK/view?usp=sharing)/ [Unwrapped (without buid-in input normalization)](https://drive.google.com/file/d/1QVmCEaXJsjErMgh7wJQZv8gDem84l9gK/view?usp=drive_link), 0.925 val acc, **Currently Used for Adversarial Dataset Generation**>
+<[Full fine-tuned](https://huggingface.co/TyBruce/ResNet18/blob/main/resnet18_fft.pth), 0.90875 val acc> <[Full fine-tuned w/ augmentation](https://huggingface.co/TyBruce/ResNet18/blob/main/resnet18_fft_augmentation.pth)/ [Unwrapped (without buid-in input normalization)](https://huggingface.co/TyBruce/ResNet18/blob/main/resnet18_fft_augmentation_unwrapped.pth), 0.925 val acc, **Currently Used for Adversarial Dataset Generation**>
 <details>
 <summary>Configuration</summary>
 Pr-trained model from 
@@ -132,7 +132,7 @@ Or unwrapped:
     model.load_state_dict(torch.load("resnet18.pth", map_location=torch.device('cpu')))
 </details>
 
-### CIFAR10-800 Adversarial Attack Dataset: [link](https://drive.google.com/file/d/1I7t8VGqKLKOvh-Kk8DoRtBI8eX3HI6Ps/view?usp=sharing)
+### CIFAR10-800 Adversarial Attack Dataset: [link](https://huggingface.co/datasets/TyBruce/CIFAR10-PGD-attack-ResNet18/blob/main/cifar10_adversarial_224_f32.parquet)
 
 Features:
 * original image (saved in PIL image format) with corresponding $L_2$ and $L_{\infty}$ PGD perturbed images (saved in float32 to keep precision, shape in (3,224,224)), also with labels from these three images.
