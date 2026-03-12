@@ -74,7 +74,7 @@ Caution: the train_test_split() method has a randomness parameter default settin
 </details>
 
 ### Fine-tuned ResNet18 trained on CIFAR10-800:
-<[Full fine-tuned](https://huggingface.co/TyBruce/ResNet18/blob/main/resnet18_fft.pth), 0.90875 val acc> <[Full fine-tuned w/ augmentation](https://huggingface.co/TyBruce/ResNet18/blob/main/resnet18_fft_augmentation.pth)/ [Unwrapped (without buid-in input normalization)](https://huggingface.co/TyBruce/ResNet18/blob/main/resnet18_fft_augmentation_unwrapped.pth), 0.925 val acc, **Currently Used for Adversarial Dataset Generation**>
+<[Full fine-tuned](https://huggingface.co/TyBruce/CIFAR10-subset-finetuned/blob/main/resnet18_fft.pth), 0.90875 val acc> <[Full fine-tuned w/ augmentation](https://huggingface.co/TyBruce/CIFAR10-subset-finetuned/blob/main/resnet18_fft_augmentation.pth)/ [Unwrapped (without buid-in input normalization)](https://huggingface.co/TyBruceCIFAR10-subset-finetuned/blob/main/resnet18_fft_augmentation_unwrapped.pth), 0.925 val acc, **Currently Used for Adversarial Dataset Generation**>
 <details>
 <summary>Configuration</summary>
 Pr-trained model from 
