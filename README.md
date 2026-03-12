@@ -13,7 +13,7 @@ Research did on UCSB ECE594BB class, Winter 2026 quarter
 * Apply L2PGD and LinfPGD adversarial attack by foolbox to the model and save the dataset (~9 GB)
 * Experiment on inter-model and cross model transferability
 
-### CIFAR10 800-Subset [link](https://huggingface.co/datasets/TyBruce/CIFAR10-PGD-attack-ResNet18/blob/main/cifar10_balanced_224.parquet) 16-sample [example](https://huggingface.co/datasets/TyBruce/CIFAR10-PGD-attack-ResNet18/blob/main/sample_16.parquet) (without adversarial attack)
+### CIFAR10 800-Subset [link](https://huggingface.co/datasets/TyBruce/CIFAR10-PGD-attack-ResNet18/blob/main/cifar10_balanced_224.parquet) (without adversarial attack) 16-sample [example](https://huggingface.co/datasets/TyBruce/CIFAR10-PGD-attack-ResNet18/blob/main/sample_16.parquet) 
 How to load it:
 ```
 from datasets import load_dataset
@@ -318,6 +318,7 @@ randomly initialized for training:
     ============================================================
 </details>
 
+
 <details>
     <summary>On Swin Transformer-base-patch4-window7-224</summary>
 
@@ -329,6 +330,8 @@ randomly initialized for training:
                   L2 PGD: 89.81% (1437/1600)
     ============================================================
 </details>
+
+[SwinT link](https://huggingface.co/TyBruce/CIFAR10-subset-finetuned/blob/main/swin_base_patch4_window7_224_fft_augmentation.pth)
 
 <details>
     <summary>On ViT-base-224</summary>
@@ -343,6 +346,7 @@ randomly initialized for training:
 
 </details>
 
+[ViT link](https://huggingface.co/TyBruce/CIFAR10-subset-finetuned/blob/main/vit_base_patch16_224_fft_augmentation.pth)
 
 ### Cross-model distilation:
 Downsampled at 32x32 pixels, the perturbation could fail.
